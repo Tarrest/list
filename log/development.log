@@ -1,0 +1,817 @@
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (47.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateLecturers (20130309191002)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "lecturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130309191002')
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("lecturers")
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:11:24 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (24.0ms)
+Compiled lecturers.css  (54ms)  (pid 236)
+Compiled scaffolds.css  (14ms)  (pid 236)
+Compiled application.css  (107ms)  (pid 236)
+Compiled jquery.js  (3ms)  (pid 236)
+Compiled jquery_ujs.js  (0ms)  (pid 236)
+Compiled lecturers.js  (193ms)  (pid 236)
+Compiled application.js  (279ms)  (pid 236)
+Completed 200 OK in 602ms (Views: 600.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /lecturers.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /lecturers.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:26 +0200
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/lecturers/new" for 127.0.0.1 at 2013-03-09 21:11:31 +0200
+Processing by LecturersController#new as HTML
+  Rendered lecturers/_form.html.erb (32.0ms)
+  Rendered lecturers/new.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 80ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:11:31 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:11:31 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:11:32 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/lecturers" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Processing by LecturersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHSxLgKBvWFVis8QoVvBPNhO4D8D2nk2kfRDoM4zP9k=", "lecturer"=>{"title"=>"Пётр Корякин", "description"=>"Хранитель традиций Айнстайнера!", "image_url"=>"pyotr.jpg"}, "commit"=>"Create Lecturer"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (35.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 09 Mar 2013 19:12:10 UTC +00:00], ["description", "Хранитель традиций Айнстайнера!"], ["image_url", "pyotr.jpg"], ["title", "Пётр Корякин"], ["updated_at", Sat, 09 Mar 2013 19:12:10 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/lecturers/1
+Completed 302 Found in 46ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/lecturers/1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered lecturers/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:10 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:11 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:11 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:12:13 +0200
+Processing by LecturersController#index as HTML
+  [1m[35mLecturer Load (0.0ms)[0m  SELECT "lecturers".* FROM "lecturers" 
+  Rendered lecturers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:13 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:13 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:12:14 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:14 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:14 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:14 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:12:14 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:37:28 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (1.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 231ms (Views: 221.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /lecturers.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /lecturers.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:30 +0200
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:37:31 +0200
+Served asset /pyotr.jpg - 404 Not Found (38ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/pyotr.jpg"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/lecturers/1" for 127.0.0.1 at 2013-03-09 21:37:34 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLecturer Load (0.0ms)[0m  SELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered lecturers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:34 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:34 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:35 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:35 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:37:35 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:35 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:37:35 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/lecturers/1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered lecturers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:38:41 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/lecturers/" for 127.0.0.1 at 2013-03-09 21:42:02 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (94.0ms)
+Completed 200 OK in 226ms (Views: 216.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lecturers/" for 127.0.0.1 at 2013-03-09 21:42:04 +0200
+Processing by LecturersController#index as HTML
+  [1m[35mLecturer Load (0.0ms)[0m  SELECT "lecturers".* FROM "lecturers" 
+  Rendered lecturers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /lecturers.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /lecturers.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:42:05 +0200
+Served asset /pyotr.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/pyotr.jpg"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (3.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (39.0ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 09 Mar 2013 19:44:38 UTC +00:00], ["description", "<p>\n        <em>Pyotr Koryakin</em> test test test test test test test test test test test test test \n        test test test test test test test test test test test test test test test test test test \n        test test .\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Pyotr Koryakin"], ["updated_at", Sat, 09 Mar 2013 19:44:38 UTC +00:00]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (11.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 09 Mar 2013 19:44:38 UTC +00:00], ["description", "<p>\n        <em>Stasya Lebedeva</em> test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Stasya Lebedeva"], ["updated_at", Sat, 09 Mar 2013 19:44:38 UTC +00:00]]
+  [1m[35m (6.0ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:45:06 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (209.0ms)
+Completed 200 OK in 321ms (Views: 312.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:08 +0200
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:08 +0200
+Served asset /lecturers.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:08 +0200
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:08 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:09 +0200
+Served asset /lecturers.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:09 +0200
+Served asset /scaffolds.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:09 +0200
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:45:09 +0200
+Served asset /Pyotr.jpg - 200 OK (73ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 21:45:09 +0200
+Served asset /Stasya.jpg - 200 OK (27ms)
+
+
+Started GET "/lecturers/3" for 127.0.0.1 at 2013-03-09 21:45:21 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mLecturer Load (0.0ms)[0m  SELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered lecturers/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:21 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:21 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:22 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:22 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:22 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:22 +0200
+Served asset /lecturers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:22 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/lecturers/2" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLecturer Load (1.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered lecturers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /lecturers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:45:26 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (10.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (30.0ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 09 Mar 2013 19:53:35 UTC +00:00], ["description", "<p>\n        <em>Pyotr Koryakin</em> test test test test test test test test test test test test test \n        test test test test test test test test test test test test test test test test test test \n        test test .\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Pyotr Koryakin"], ["updated_at", Sat, 09 Mar 2013 19:53:35 UTC +00:00]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 09 Mar 2013 19:53:35 UTC +00:00], ["description", "<p>\n        <em>Stasya Lebedeva</em> test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Stasya Lebedeva"], ["updated_at", Sat, 09 Mar 2013 19:53:35 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:55:51 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (208.0ms)
+Completed 200 OK in 321ms (Views: 312.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /lecturers.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /lecturers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:55:53 +0200
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:55:54 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (5ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 21:55:54 +0200
+Served asset /Stasya.jpg - 200 OK (16ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (3.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (29.0ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 09 Mar 2013 19:57:27 UTC +00:00], ["description", "<p>\n        test test test test test test test test test test test test test \n        test test test test test test test test test test test test test test test test test test \n        test test .\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Pyotr Koryakin"], ["updated_at", Sat, 09 Mar 2013 19:57:27 UTC +00:00]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 09 Mar 2013 19:57:27 UTC +00:00], ["description", "<p>\n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Stasya Lebedeva"], ["updated_at", Sat, 09 Mar 2013 19:57:27 UTC +00:00]]
+  [1m[35m (4.0ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:57:43 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (211.0ms)
+Completed 200 OK in 324ms (Views: 315.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:57:45 +0200
+Served asset /scaffolds.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:57:45 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /lecturers.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /lecturers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 21:57:46 +0200
+Served asset /Stasya.jpg - 304 Not Modified (8ms)
+
+
+Started GET "/lecturers/7" for 127.0.0.1 at 2013-03-09 21:58:31 +0200
+Processing by LecturersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mLecturer Load (1.0ms)[0m  SELECT "lecturers".* FROM "lecturers" WHERE "lecturers"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered lecturers/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:32 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 21:58:51 +0200
+Served asset /Stasya.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 22:03:03 +0200
+Processing by LecturersController#index as HTML
+  [1m[35mLecturer Load (1.0ms)[0m  SELECT "lecturers".* FROM "lecturers" 
+  Rendered lecturers/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:03 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:03 +0200
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 22:03:04 +0200
+Served asset /Stasya.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 22:03:31 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (1.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:31 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /lecturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 22:03:32 +0200
+Served asset /Stasya.jpg - 304 Not Modified (0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateLecturers (20130309191002)
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("lecturers")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (30.0ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sat, 09 Mar 2013 20:07:03 UTC +00:00], ["description", "<p>\n        test test test test test test test test test test test test test \n        test test test test test test test test test test test test test test test test test test \n        test test .\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Pyotr Koryakin"], ["updated_at", Sat, 09 Mar 2013 20:07:03 UTC +00:00]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sat, 09 Mar 2013 20:07:04 UTC +00:00], ["description", "<p>\n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Stasya Lebedeva"], ["updated_at", Sat, 09 Mar 2013 20:07:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-09 22:07:26 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (207.0ms)
+Completed 200 OK in 320ms (Views: 311.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /lecturers.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /lecturers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
+Served asset /Stasya.jpg - 304 Not Modified (4ms)

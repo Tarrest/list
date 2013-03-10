@@ -1,0 +1,30 @@
+<h1>Список Лекторов</h1>
+
+<table>
+<% @lecturers.each do |lecturer| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+    <td>
+        <%= image_tag(lecturer.image_url, class: 'list_image') %>
+    </td>
+
+    <td class="list_description">
+        <dl>
+            <dt><%= lecturer.title %></dt>
+            <dd><%= truncate(strip_tags(lecturer.description),
+                length: 80) %></dd>
+        </dl>
+    </td>
+
+    <td class="list_actions">
+        <%= link_to 'Show', lecturer %><br/>
+        <%= link_to 'Edit', edit_lecturer_path(lecturer) %><br/>
+        <%= link_to 'Destroy', lecturer,
+                    confirm: 'Are you sure?',
+                    method: :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Новый лектор', new_lecturer_path %>
