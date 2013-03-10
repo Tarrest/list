@@ -23,19 +23,21 @@
 #---
 # encoding: utf-8
 Lecturer.delete_all
-Lecturer.create(:title => 'Петр Кoрякин',
+Lecturer.create(:title => 'Pyotr Koryakin',
   :description => 
     %{<p>
-        <em>Петр Кoрякин</em> Хранитель традиций Ainstainer. Помимо лекционных обязанностей, является
-        по совместительству место- и вайфайпровайдером, идейным вдохновителем и практикующим рубистом.
+        test test test test test test test test test test test test test 
+        test test test test test test test test test test test test test test test test test test 
+        test test .
       </p>},
   :image_url =>   'Pyotr.jpg')
 # . . .
-Lecturer.create(:title => 'Анастасия Лебедева',
+Lecturer.create(:title => 'Stasya Lebedeva',
   :description =>
     %{<p>
-        <em>Анастасия Лебедева</em> Представитель вольной Слободки. Массивво и хеше-повелитель. Является 
-        одним из родоначальников нашего гаражика, а также практикующим рубистом. 
+        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 
+        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 
+        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 
       </p>},
 
   :image_url => 'Stasya.jpg')

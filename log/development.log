@@ -815,3 +815,105 @@ Served asset /Pyotr.jpg - 304 Not Modified (3ms)
 
 Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-09 22:07:28 +0200
 Served asset /Stasya.jpg - 304 Not Modified (4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (30.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (129.5ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 10 Mar 2013 15:58:59 UTC +00:00], ["description", "<p>\n        test test test test test test test test test test test test test \n        test test test test test test test test test test test test test test test test test test \n        test test .\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Pyotr Koryakin"], ["updated_at", Sun, 10 Mar 2013 15:58:59 UTC +00:00]]
+  [1m[36m (32.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 10 Mar 2013 15:58:59 UTC +00:00], ["description", "<p>\n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n        test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 test 1 \n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Stasya Lebedeva"], ["updated_at", Sun, 10 Mar 2013 15:58:59 UTC +00:00]]
+  [1m[35m (29.5ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-10 17:59:31 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.5ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (253.5ms)
+Completed 200 OK in 717ms (Views: 704.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /lecturers.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /lecturers.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-10 17:59:34 +0200
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-10 17:59:35 +0200
+Served asset /Stasya.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-10 17:59:35 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (43.0ms)[0m  DELETE FROM "lecturers"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (33.5ms)[0m  INSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 10 Mar 2013 16:00:33 UTC +00:00], ["description", "<p>\n        <em>Петр Корякин</em> Петр КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр\n        КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр КорякинПетр\n        КорякинПетр КорякинПетр Корякин\n      </p>"], ["image_url", "Pyotr.jpg"], ["title", "Петр Корякин"], ["updated_at", Sun, 10 Mar 2013 16:00:33 UTC +00:00]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "lecturers" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 10 Mar 2013 16:00:33 UTC +00:00], ["description", "<p>\n        <em>Анастасия ЛебедеваАнастасия ЛебедеваАнастасия ЛебедеваАнастасия ЛебедеваАнастасия \n        ЛебедеваАнастасия Лебедева Анастасия ЛебедеваАнастасия ЛебедеваАнастасия ЛебедеваАнастасия \n        ЛебедеваАнастасия ЛебедеваАнастасия ЛебедеваАнастасия Лебедева\n      </p>"], ["image_url", "Stasya.jpg"], ["title", "Анастасия Лебедева"], ["updated_at", Sun, 10 Mar 2013 16:00:33 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  commit transaction
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-10 18:00:53 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.5ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (219.0ms)
+Completed 200 OK in 344ms (Views: 333.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /lecturers.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /lecturers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
+Served asset /Stasya.jpg - 304 Not Modified (3ms)
