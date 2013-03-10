@@ -1,4 +1,5 @@
-# coding: utf-8
+# coding: u
+f-8
 Lecturer.delete_all
 Lecturer.create(:title => 'Петр Корякин',
   :description => 

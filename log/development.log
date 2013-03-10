@@ -917,3 +917,93 @@ Served asset /Pyotr.jpg - 304 Not Modified (2ms)
 
 Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-10 18:00:56 +0200
 Served asset /Stasya.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-10 23:04:23 +0200
+Processing by LecturersController#index as HTML
+  [1m[36mLecturer Load (0.0ms)[0m  [1mSELECT "lecturers".* FROM "lecturers" [0m
+  Rendered lecturers/index.html.erb within layouts/application (226.0ms)
+Compiled lecturers.css  (54ms)  (pid 5116)
+Compiled application.css  (2ms)  (pid 5116)
+Completed 200 OK in 646ms (Views: 636.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-10 23:04:25 +0200
+Served asset /scaffolds.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-10 23:04:25 +0200
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-10 23:04:25 +0200
+Served asset /lecturers.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-10 23:04:25 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-10 23:04:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-10 23:04:26 +0200
+Served asset /lecturers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-10 23:04:26 +0200
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-10 23:04:26 +0200
+Served asset /Pyotr.jpg - 304 Not Modified (2ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-10 23:04:26 +0200
+Served asset /Stasya.jpg - 304 Not Modified (3ms)
+
+
+Started GET "/lecturers" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Processing by LecturersController#index as HTML
+  [1m[35mLecturer Load (1.0ms)[0m  SELECT "lecturers".* FROM "lecturers" 
+  Rendered lecturers/index.html.erb within layouts/application (7.0ms)
+Compiled lecturers.css  (11ms)  (pid 5116)
+Compiled application.css  (1ms)  (pid 5116)
+Completed 200 OK in 69ms (Views: 66.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/lecturers.css?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /lecturers.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/lecturers.js?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /lecturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/Pyotr.jpg" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /Pyotr.jpg - 200 OK (12ms)
+
+
+Started GET "/assets/Stasya.jpg" for 127.0.0.1 at 2013-03-10 23:06:54 +0200
+Served asset /Stasya.jpg - 304 Not Modified (0ms)
